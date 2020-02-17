@@ -9,39 +9,57 @@ public class UserRegistration {
     //TESTING FOR FIRST NAME
     @Test
     public void givenFirstName_WhenProper_ShouldReturnTrue() {
-        boolean result = userRegistrationObject.checkForValidFirstName("Pritam");
-        Assert.assertTrue(result);
+        boolean validFirstNameResult1 = userRegistrationObject.checkForValidFirstName("Pritam");
+        Assert.assertTrue(validFirstNameResult1);
     }
 
     @Test
     public void givenFirstName_WhenImproper_ShouldReturnFalse() {
-        boolean result = userRegistrationObject.checkForValidFirstName("pritam");
-        Assert.assertFalse(result);
+        boolean validFirstNameResult2 = userRegistrationObject.checkForValidFirstName("pritam");
+        Assert.assertFalse(validFirstNameResult2);
     }
 
     @Test
     public void givenFirstName_WhenNotAlphabetic_ShouldReturnFalse() {
-        boolean result = userRegistrationObject.checkForValidFirstName("1234");
-        Assert.assertFalse(result);
+        boolean validFirstNameResult3 = userRegistrationObject.checkForValidFirstName("1234");
+        Assert.assertFalse(validFirstNameResult3);
     }
 
     //TESTING FOR LAST NAME
     @Test
     public void givenLastName_WhenProper_ShouldReturnTrue() {
-        boolean result = userRegistrationObject.checkForValidLastName("Suryawanshi");
-        Assert.assertTrue(result);
+        boolean validLastNameResult1 = userRegistrationObject.checkForValidLastName("Suryawanshi");
+        Assert.assertTrue(validLastNameResult1);
     }
 
     @Test
     public void givenLastName_WhenImproper_ShouldReturnFalse() {
-        boolean result = userRegistrationObject.checkForValidFirstName("suryawanshi");
-        Assert.assertFalse(result);
+        boolean validLastNameResult2 = userRegistrationObject.checkForValidFirstName("suryawanshi");
+        Assert.assertFalse(validLastNameResult2);
     }
 
     @Test
     public void givenLastName_WhenNotAlphabetic_ShouldReturnFalse() {
-        boolean result = userRegistrationObject.checkForValidFirstName("1234");
-        Assert.assertFalse(result);
+        boolean validLastNameResult3 = userRegistrationObject.checkForValidFirstName("1234");
+        Assert.assertFalse(validLastNameResult3);
+    }
+
+    @Test
+    public void givenEmailId_WhenProper_ShouldReturnTrue() {
+    boolean validEmailIdResult1 = userRegistrationObject.checkForValidEmailId("pritam.surya110@gmail.com");
+    Assert.assertTrue(validEmailIdResult1);
+    }
+
+    @Test
+    public void givenEmailId_WhenImproper_ShouldReturnFalse() {
+        boolean validEmailIdResult2 = userRegistrationObject.checkForValidEmailId("pritam.@gmail.com");
+        Assert.assertFalse(validEmailIdResult2);
+    }
+
+    @Test
+    public void givenEmailId_WhenImproper_ShouldReturnFalse2() {
+        boolean validEmailIdResult3 = userRegistrationObject.checkForValidEmailId("abc.@gmail.com");
+        Assert.assertFalse(validEmailIdResult3);
     }
 }
 
