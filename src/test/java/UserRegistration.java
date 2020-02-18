@@ -3,7 +3,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class UserRegistration {
-    // Object Created to access the main class
+    // Object created to access the main class
     UserRegistrationMain userRegistrationObject = new UserRegistrationMain();
 
     // TESTING FOR VALID FIRST NAME
@@ -15,7 +15,7 @@ public class UserRegistration {
 
     @Test
     public void givenFirstName_WhenImproper_ShouldReturnFalse() {
-        boolean invalidFirstNameResult1 = userRegistrationObject.checkForValidFirstName("pritam");
+        boolean invalidFirstNameResult1 = userRegistrationObject.checkForValidFirstName("pritam123");
         Assert.assertFalse(invalidFirstNameResult1);
     }
 
