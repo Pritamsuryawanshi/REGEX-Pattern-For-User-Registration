@@ -3,7 +3,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class UserRegistration {
-    // Object created to access the main class
+    // Object created to access the Main class
     UserRegistrationMain userRegistrationObject = new UserRegistrationMain();
 
     // TESTING FOR VALID FIRST NAME
@@ -111,7 +111,7 @@ public class UserRegistration {
     // TESTING FOR VALID PASSWORD BY RULE THREE
     @Test
     public void givenPassword_ByRuleThree_WhenProper_ShouldReturnTrue() {
-        boolean validPasswordResultByRuleThree = userRegistrationObject.checkForValidPassword("Passcode123", userRegistrationObject.PASSWORD_PATTERN_RULE_THREE);
+        boolean validPasswordResultByRuleThree = userRegistrationObject.checkForValidPassword("Pass0123", userRegistrationObject.PASSWORD_PATTERN_RULE_THREE);
         Assert.assertTrue(validPasswordResultByRuleThree);
     }
 
