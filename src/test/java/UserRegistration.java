@@ -15,14 +15,14 @@ public class UserRegistration {
 
     @Test
     public void givenFirstName_WhenImproper_ShouldReturnFalse() {
-        boolean inValidFirstNameResult1 = userRegistrationObject.checkForValidFirstName("pritam");
-        Assert.assertFalse(inValidFirstNameResult1);
+        boolean invalidFirstNameResult1 = userRegistrationObject.checkForValidFirstName("pritam");
+        Assert.assertFalse(invalidFirstNameResult1);
     }
 
     @Test
     public void givenFirstName_WhenNotAlphabetic_ShouldReturnFalse() {
-        boolean inValidFirstNameResult2 = userRegistrationObject.checkForValidFirstName("1234");
-        Assert.assertFalse(inValidFirstNameResult2);
+        boolean invalidFirstNameResult2 = userRegistrationObject.checkForValidFirstName("1234");
+        Assert.assertFalse(invalidFirstNameResult2);
     }
 
     // TESTING FOR VALID LAST NAME
@@ -34,14 +34,14 @@ public class UserRegistration {
 
     @Test
     public void givenLastName_WhenImproper_ShouldReturnFalse() {
-        boolean inValidLastNameResult1 = userRegistrationObject.checkForValidFirstName("suryawanshi");
-        Assert.assertFalse(inValidLastNameResult1);
+        boolean invalidLastNameResult1 = userRegistrationObject.checkForValidFirstName("suryawanshi");
+        Assert.assertFalse(invalidLastNameResult1);
     }
 
     @Test
     public void givenLastName_WhenNotAlphabetic_ShouldReturnFalse() {
-        boolean inValidLastNameResult2 = userRegistrationObject.checkForValidFirstName("1234");
-        Assert.assertFalse(inValidLastNameResult2);
+        boolean invalidLastNameResult2 = userRegistrationObject.checkForValidFirstName("1234");
+        Assert.assertFalse(invalidLastNameResult2);
     }
 
     // TESTING FOR VALID EMAIL ID
@@ -53,14 +53,14 @@ public class UserRegistration {
 
     @Test
     public void givenEmailId_WhenImproper_ShouldReturnFalse() {
-        boolean inValidEmailIdResult1 = userRegistrationObject.checkForValidEmailId("pritam.@gmail.com");
-        Assert.assertFalse(inValidEmailIdResult1);
+        boolean invalidEmailIdResult1 = userRegistrationObject.checkForValidEmailId("pritam.@gmail.com");
+        Assert.assertFalse(invalidEmailIdResult1);
     }
 
     @Test
     public void givenEmailId_WhenImproper_ShouldReturnFalse2() {
-        boolean inValidEmailIdResult2 = userRegistrationObject.checkForValidEmailId("abc.@gmail.com");
-        Assert.assertFalse(inValidEmailIdResult2);
+        boolean invalidEmailIdResult2 = userRegistrationObject.checkForValidEmailId("abc.@gmail.com");
+        Assert.assertFalse(invalidEmailIdResult2);
     }
 
     // TESTING FOR VALID PHONE NUMBER
@@ -72,8 +72,8 @@ public class UserRegistration {
 
     @Test
     public void givenPhoneNumber_WhenImproper_ShouldReturnFalse() {
-        boolean inValidPhoneNumberResult1 = userRegistrationObject.checkForValidPhoneNumber("918169842509");
-        Assert.assertFalse(inValidPhoneNumberResult1);
+        boolean invalidPhoneNumberResult1 = userRegistrationObject.checkForValidPhoneNumber("918169842509");
+        Assert.assertFalse(invalidPhoneNumberResult1);
     }
 
     // TESTING FOR VALID PASSWORD BY RULE ONE
@@ -85,18 +85,17 @@ public class UserRegistration {
 
     @Test
     public void givenPassword_ByRuleOne_WhenImproper_ShouldReturnFalse1() {
-        boolean inValidPasswordResultByRuleOne1 = userRegistrationObject.checkForValidPassword("pass");
-        Assert.assertFalse(inValidPasswordResultByRuleOne1);
+        boolean invalidPasswordResultByRuleOne1 = userRegistrationObject.checkForValidPassword("pass");
+        Assert.assertFalse(invalidPasswordResultByRuleOne1);
     }
 
     @Test
     public void givenPassword_ByRuleOne_WhenBlank_ShouldReturnFalse2() {
-        boolean inValidPasswordResultByRuleOne2 = userRegistrationObject.checkForValidPassword(" ");
-        Assert.assertFalse(inValidPasswordResultByRuleOne2);
+        boolean invalidPasswordResultByRuleOne2 = userRegistrationObject.checkForValidPassword(" ");
+        Assert.assertFalse(invalidPasswordResultByRuleOne2);
     }
 
     // TESTING FOR VALID PASSWORD BY RULE TWO
-
     @Test
     public void givenPassword_ByRuleTwo_WhenProper_ShouldReturnTrue() {
         boolean validPasswordResultByRuleTwo = userRegistrationObject.checkForValidPasswordByRuleTwo("passCode");
@@ -107,6 +106,19 @@ public class UserRegistration {
     public void givenPassword_ByRuleTwo_WhenImproper_ShouldReturnFalse() {
         boolean validPasswordResultByRuleTwo = userRegistrationObject.checkForValidPasswordByRuleTwo("passcode");
         Assert.assertFalse(validPasswordResultByRuleTwo);
+    }
+
+    // TESTING FOR VALID PASSWORD BY RULE THREE
+    @Test
+    public void givenPassword_ByRuleThree_WhenProper_ShouldReturnTrue() {
+        boolean validPasswordResultByRuleThree = userRegistrationObject.checkForValidPasswordByRuleThree("Passcode123");
+        Assert.assertTrue(validPasswordResultByRuleThree);
+    }
+
+    @Test
+    public void givenPassword_ByRuleThree_WhenImproper_ShouldReturnFalse() {
+        boolean invalidPasswordResultByRuleThree = userRegistrationObject.checkForValidPasswordByRuleThree("Passcode");
+        Assert.assertFalse(invalidPasswordResultByRuleThree);
     }
 }
 
