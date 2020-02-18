@@ -133,7 +133,5 @@ public class UserRegistration {
         boolean invalidPasswordResultByRuleFour = userRegistrationObject.checkForValidPasswordByRuleFour("Passcode123");
         Assert.assertFalse(invalidPasswordResultByRuleFour);
     }
-
-
 }
 
