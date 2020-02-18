@@ -79,58 +79,58 @@ public class UserRegistration {
     // TESTING FOR VALID PASSWORD BY RULE ONE
     @Test
     public void givenPassword_ByRuleOne_WhenProper_ShouldReturnTrue() {
-        boolean validPasswordResultByRuleOne = userRegistrationObject.checkForValidPassword("passcode");
+        boolean validPasswordResultByRuleOne = userRegistrationObject.checkForValidPassword("passcode", userRegistrationObject.PASSWORD_PATTERN_RULE_ONE);
         Assert.assertTrue(validPasswordResultByRuleOne);
     }
 
     @Test
     public void givenPassword_ByRuleOne_WhenImproper_ShouldReturnFalse1() {
-        boolean invalidPasswordResultByRuleOne1 = userRegistrationObject.checkForValidPassword("pass");
+        boolean invalidPasswordResultByRuleOne1 = userRegistrationObject.checkForValidPassword("pass",userRegistrationObject.PASSWORD_PATTERN_RULE_ONE);
         Assert.assertFalse(invalidPasswordResultByRuleOne1);
     }
 
     @Test
     public void givenPassword_ByRuleOne_WhenBlank_ShouldReturnFalse2() {
-        boolean invalidPasswordResultByRuleOne2 = userRegistrationObject.checkForValidPassword(" ");
+        boolean invalidPasswordResultByRuleOne2 = userRegistrationObject.checkForValidPassword(" ", userRegistrationObject.PASSWORD_PATTERN_RULE_ONE);
         Assert.assertFalse(invalidPasswordResultByRuleOne2);
     }
 
     // TESTING FOR VALID PASSWORD BY RULE TWO
     @Test
     public void givenPassword_ByRuleTwo_WhenProper_ShouldReturnTrue() {
-        boolean validPasswordResultByRuleTwo = userRegistrationObject.checkForValidPasswordByRuleTwo("passCode");
+        boolean validPasswordResultByRuleTwo = userRegistrationObject.checkForValidPassword("passCode", userRegistrationObject.PASSWORD_PATTERN_RULE_TWO);
         Assert.assertTrue(validPasswordResultByRuleTwo);
     }
 
     @Test
     public void givenPassword_ByRuleTwo_WhenImproper_ShouldReturnFalse() {
-        boolean validPasswordResultByRuleTwo = userRegistrationObject.checkForValidPasswordByRuleTwo("passcode");
+        boolean validPasswordResultByRuleTwo = userRegistrationObject.checkForValidPassword("passcode", userRegistrationObject.PASSWORD_PATTERN_RULE_TWO);
         Assert.assertFalse(validPasswordResultByRuleTwo);
     }
 
     // TESTING FOR VALID PASSWORD BY RULE THREE
     @Test
     public void givenPassword_ByRuleThree_WhenProper_ShouldReturnTrue() {
-        boolean validPasswordResultByRuleThree = userRegistrationObject.checkForValidPasswordByRuleThree("Passcode123");
+        boolean validPasswordResultByRuleThree = userRegistrationObject.checkForValidPassword("Passcode123", userRegistrationObject.PASSWORD_PATTERN_RULE_THREE);
         Assert.assertTrue(validPasswordResultByRuleThree);
     }
 
     @Test
     public void givenPassword_ByRuleThree_WhenImproper_ShouldReturnFalse() {
-        boolean invalidPasswordResultByRuleThree = userRegistrationObject.checkForValidPasswordByRuleThree("Passcode");
+        boolean invalidPasswordResultByRuleThree = userRegistrationObject.checkForValidPassword("Passcode", userRegistrationObject.PASSWORD_PATTERN_RULE_THREE);
         Assert.assertFalse(invalidPasswordResultByRuleThree);
     }
 
     // TESTING FOR VALID PASSWORD BY RULE FOUR
     @Test
     public void givenPassword_ByRuleFour_WhenProper_ShouldReturnTrue() {
-        boolean validPasswordResultByRuleFour = userRegistrationObject.checkForValidPasswordByRuleFour("Passcode@123");
+        boolean validPasswordResultByRuleFour = userRegistrationObject.checkForValidPassword("Passcode@123", userRegistrationObject.PASSWORD_PATTERN_RULE_FOUR);
         Assert.assertTrue(validPasswordResultByRuleFour);
     }
 
     @Test
     public void givenPassword_ByRuleFour_WhenImproper_ShouldReturnFalse() {
-        boolean invalidPasswordResultByRuleFour = userRegistrationObject.checkForValidPasswordByRuleFour("Passcode123");
+        boolean invalidPasswordResultByRuleFour = userRegistrationObject.checkForValidPassword("Passcode123", userRegistrationObject.PASSWORD_PATTERN_RULE_FOUR);
         Assert.assertFalse(invalidPasswordResultByRuleFour);
     }
 }

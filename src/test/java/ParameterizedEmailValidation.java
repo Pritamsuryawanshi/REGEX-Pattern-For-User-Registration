@@ -31,7 +31,7 @@ public class ParameterizedEmailValidation {
 
     @Parameterized.Parameters
     public static Collection input() {
-    return Arrays.asList(new Object[][]{
+        return Arrays.asList(new Object[][]{
             {"abc@yahoo.com", true},
             {"abc-100@yahoo.com", true},
             {"abc.100@yahoo.com", true},
@@ -53,7 +53,7 @@ public class ParameterizedEmailValidation {
             {"abc@abc@gmail.com", false},
             {"abc@gmail.com.1a", false},
             {"abc@gmail.com.aa.au", false}});
-}
+    }
 
     @Test
     public void EmailValidation() {
