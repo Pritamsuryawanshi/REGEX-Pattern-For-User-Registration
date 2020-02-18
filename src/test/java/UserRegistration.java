@@ -76,23 +76,37 @@ public class UserRegistration {
         Assert.assertFalse(inValidPhoneNumberResult1);
     }
 
-    // TESTING FOR VALID PASSWORD
+    // TESTING FOR VALID PASSWORD BY RULE ONE
     @Test
-    public void givenPassword_WhenProper_ShouldReturnTrue() {
-        boolean validPasswordResult = userRegistrationObject.checkForValidPassword("passcode");
-        Assert.assertTrue(validPasswordResult);
+    public void givenPassword_ByRuleOne_WhenProper_ShouldReturnTrue() {
+        boolean validPasswordResultByRuleOne = userRegistrationObject.checkForValidPassword("passcode");
+        Assert.assertTrue(validPasswordResultByRuleOne);
     }
 
     @Test
-    public void givenPassword_WhenImproper_ShouldReturnFalse() {
-        boolean inValidPasswordResult1 = userRegistrationObject.checkForValidPassword("pass");
-        Assert.assertFalse(inValidPasswordResult1);
+    public void givenPassword_ByRuleOne_WhenImproper_ShouldReturnFalse1() {
+        boolean inValidPasswordResultByRuleOne1 = userRegistrationObject.checkForValidPassword("pass");
+        Assert.assertFalse(inValidPasswordResultByRuleOne1);
     }
 
     @Test
-    public void givenPassword_WhenBlank_ShouldReturnFalse2() {
-        boolean inValidPasswordResult2 = userRegistrationObject.checkForValidPassword("  ");
-        Assert.assertFalse(inValidPasswordResult2);
+    public void givenPassword_ByRuleOne_WhenBlank_ShouldReturnFalse2() {
+        boolean inValidPasswordResultByRuleOne2 = userRegistrationObject.checkForValidPassword(" ");
+        Assert.assertFalse(inValidPasswordResultByRuleOne2);
+    }
+
+    // TESTING FOR VALID PASSWORD BY RULE TWO
+
+    @Test
+    public void givenPassword_ByRuleTwo_WhenProper_ShouldReturnTrue() {
+        boolean validPasswordResultByRuleTwo = userRegistrationObject.checkForValidPasswordByRuleTwo("passCode");
+        Assert.assertTrue(validPasswordResultByRuleTwo);
+    }
+
+    @Test
+    public void givenPassword_ByRuleTwo_WhenImproper_ShouldReturnFalse() {
+        boolean validPasswordResultByRuleTwo = userRegistrationObject.checkForValidPasswordByRuleTwo("passcode");
+        Assert.assertFalse(validPasswordResultByRuleTwo);
     }
 }
 
