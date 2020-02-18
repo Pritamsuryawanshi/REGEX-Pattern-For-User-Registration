@@ -120,5 +120,20 @@ public class UserRegistration {
         boolean invalidPasswordResultByRuleThree = userRegistrationObject.checkForValidPasswordByRuleThree("Passcode");
         Assert.assertFalse(invalidPasswordResultByRuleThree);
     }
+
+    // TESTING FOR VALID PASSWORD BY RULE FOUR
+    @Test
+    public void givenPassword_ByRuleFour_WhenProper_ShouldReturnTrue() {
+        boolean validPasswordResultByRuleFour = userRegistrationObject.checkForValidPasswordByRuleFour("Passcode@123");
+        Assert.assertTrue(validPasswordResultByRuleFour);
+    }
+
+    @Test
+    public void givenPassword_ByRuleFour_WhenImproper_ShouldReturnFalse() {
+        boolean invalidPasswordResultByRuleFour = userRegistrationObject.checkForValidPasswordByRuleFour("Passcode123");
+        Assert.assertFalse(invalidPasswordResultByRuleFour);
+    }
+
+
 }
 
