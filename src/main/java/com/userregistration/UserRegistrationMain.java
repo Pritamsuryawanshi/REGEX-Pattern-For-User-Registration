@@ -8,7 +8,6 @@ public class UserRegistrationMain {
     public static final String PASSWORD_PATTERN_RULE_ONE = "^[a-zA-Z0-9]{8,}$";
     public static final String PASSWORD_PATTERN_RULE_TWO = "^(?=.*[A-Z])[a-zA-Z]{7,}$";
     public static final String PASSWORD_PATTERN_RULE_THREE = "^(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]{6,}$";
-  //  public static final String PASSWORD_PATTERN_RULE_FOUR = "^((?=[^@|#|&|%]*[@|&|#|%][^@|#|&|%]*$)(?=.*[A-Z])(?=.*[0-9])[A-Za-z0-9@#%&]{8,})$";
     public static final String PASSWORD_PATTERN_RULE_FOUR = "^((?=[^@#&%\\_]*[@&#%\\_][^@#&%\\_]*$)(?=.*[A-Z])(?=.*[0-9])[A-Za-z0-9@#%&\\_]{8,})$";
 
     public static void main(String[] args) {

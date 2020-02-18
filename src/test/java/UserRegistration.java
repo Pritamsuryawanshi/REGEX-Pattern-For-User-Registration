@@ -3,7 +3,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class UserRegistration {
-    // Object created to access the main class
+    // Object created to access the Main class
     UserRegistrationMain userRegistrationObject = new UserRegistrationMain();
 
     // TESTING FOR VALID FIRST NAME
